@@ -1,0 +1,119 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:security="http://www.springframework.org/schema/security"             
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans.xsd
+							http://www.springframework.org/schema/security 
+							http://www.springframework.org/schema/security/spring-security.xsd
+							http://www.springframework.org/schema/mvc 
+							http://www.springframework.org/schema/mvc/spring-mvc.xsd 
+							http://www.springframework.org/schema/context 
+							http://www.springframework.org/schema/context/spring-context.xsd 
+							http://www.springframework.org/schema/data/mongo 
+							http://www.springframework.org/schema/data/mongo/spring-mongo-2.0.xsd
+							http://www.springframework.org/schema/data/repository
+							http://www.springframework.org/schema/data/repository/spring-repository-1.5.xsd">
+							
+	<!-- <context:annotation-config />
+
+	 <context:component-scan base-package="com.com.howtodoinjava.demo">
+		  <context:exclude-filter type="annotation" expression="org.springframework.context.annotation.Configuration" />
+	 </context:component-scan>
+ 
+	<context:property-placeholder location="classpath:application.properties" />-->
+	
+	<!-- Connection to MongoDB server -->
+	<!--<bean id="mongoServerAddressList" class="java.util.ArrayList">
+    <constructor-arg>
+        <list>
+            <ref bean="mongoServerAddress" />
+        </list>
+    </constructor-arg>
+    </bean>
+
+    <bean id="mongoServerAddress" class="com.mongodb.ServerAddress">
+          <constructor-arg type="java.lang.String" name="host" value="${spring.data.mongodb.host}"/>
+          <constructor-arg type="int" name="port" value="${spring.data.mongodb.port}"/>
+    </bean>
+-->
+    <!-- Credentials -->
+    <!-- <bean id="mongoCredentialList" class="java.util.ArrayList">
+    <constructor-arg>
+        <list>
+            <ref bean="mongoCredential" />
+        </list>
+    </constructor-arg>
+    </bean>
+
+    <bean id="mongoCredential" class="com.mongodb.MongoCredential" factory-method="createCredential">			
+		<property name="userName" value="${spring.data.mongodb.username}" />
+		<property name="source" value="${spring.data.mongodb.database}" />
+        <property name="password" value="${spring.data.mongodb.password}" />
+    </bean>
+ -->
+    <!-- MongoClient -->
+   <!-- <bean id="mongoClient" class="com.mongodb.MongoClient">
+            <constructor-arg ref="mongoServerAddress" />
+            <constructor-arg ref="mongoCredentialList"  />
+    </bean>
+ --> 
+    <!-- MongoDbFactory -->
+   <!-- <bean id="simpleMongoDbFactory" class="org.springframework.data.mongodb.core.SimpleMongoDbFactory">
+        <constructor-arg ref="mongoClient" />
+        <constructor-arg name="databaseName" value="${spring.data.mongodb.database}" />
+    </bean>
+ --> 
+    <!-- MongoTemplate -->
+   <!--<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg ref="simpleMongoDbFactory" />
+    </bean>-->
+    
+	<!--<mongo:db-factory id="mongoDbFactory" host="${spring.data.mongodb.host}" 
+										  port="${spring.data.mongodb.port}" 
+										  dbname="${spring.data.mongodb.database}"
+										  username="${spring.data.mongodb.username}"
+										  password="${spring.data.mongodb.password}" /> -->
+										  
+	<!-- <mongo:mapping-converter id="converter" db-factory-ref="simpleMongoDbFactory"/>  -->
+	
+	<!-- Define MongoDB GridFS Template -->
+	<!-- <bean id="gridFsTemplate" class="org.springframework.data.mongodb.gridfs.GridFsTemplate">
+		<constructor-arg ref="simpleMongoDbFactory" />
+		<constructor-arg ref="converter" />
+	</bean>  -->
+	<!-- Test -->
+	 <bean id="praveen" class="java.lang.String">
+		<constructor-arg value="praveen test string" />
+	</bean>
+
+    
+<!--
+    <mvc:annotation-driven></mvc:annotation-driven>
+    <context:component-scan base-package="com.javapointers"></context:component-scan>
+
+    <http use-expressions="true" auto-config="false">
+    we intercept request and make sure that login users with specific role can only access the pages
+	<intercept-url pattern="/home" access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')" />
+
+        <form-login login-page="/login" default-target-url="/home"
+                    authentication-failure-url="/login?error=" />
+        <logout invalidate-session="true" logout-success-url="/logout" />
+    </http>
+
+    <authentication-manager>
+        <authentication-provider user-service-ref="customUserDetailsService">
+            <password-encoder ref="encoder"/>
+        </authentication-provider>
+    </authentication-manager>
+
+    <beans:bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+    <beans:bean id="customUserDetailsService" class="com.javapointers.custom.CustomUserDetailsService"/>
+	
+    
+    <mvc:view-controller path="/login" view-name="login"/>
+    <mvc:view-controller path="/logout" view-name="logout"/>-->
+</beans>
