@@ -1,4 +1,4 @@
-package com.howtodoinjava.demo.controller;
+/*package com.howtodoinjava.demo.controller;
 
 import com.howtodoinjava.demo.file.UploadFileResponse;
 import com.howtodoinjava.demo.file.FileStorageService;
@@ -72,3 +72,4 @@ public class FileController {
                 .body(resource);
     }
 }
+*/
