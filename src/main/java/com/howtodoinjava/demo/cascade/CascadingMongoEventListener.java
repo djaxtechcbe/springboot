@@ -1,4 +1,4 @@
-package com.howtodoinjava.demo.cascade;
+/*package com.howtodoinjava.demo.cascade;
 
 import com.howtodoinjava.demo.cascade.CascadeSave;
 import org.springframework.data.annotation.Id;
@@ -45,7 +45,7 @@ public class CascadingMongoEventListener extends AbstractMongoEventListener<Obje
 				role.setId(seqUtil.getNextSequenceId(sequenceKey));
 			}
 		}*/
-		
+	/*	
         ReflectionUtils.doWithFields(source.getClass(), new ReflectionUtils.FieldCallback() {
 
             public void doWith(Field field) throws IllegalArgumentException, IllegalAccessException {
@@ -97,4 +97,4 @@ public class CascadingMongoEventListener extends AbstractMongoEventListener<Obje
             return idFound;
         }
     }
-}
+}*/
