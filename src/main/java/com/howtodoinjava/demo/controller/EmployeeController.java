@@ -179,7 +179,7 @@ public class EmployeeController {
 		return emp.findByLastName(lastName);
 	}
 
-	// @PreAuthorize("hasRole('USER')")
+/*	// @PreAuthorize("hasRole('USER')")
 	@RequestMapping(value = "/getEmpByMgr/{mId}", method = RequestMethod.GET)
 	public List<Employee> getEmpByMgr(@PathVariable Integer mId) {
 		Sort sort = new Sort(new Sort.Order(Direction.DESC, "firstName"));
@@ -205,7 +205,7 @@ public class EmployeeController {
 		Pageable pageable = new PageRequest(0, 10);
 		return emp.searchEmployeeInfo(empId, email, state, country, pageable);
 	}
-
+*/
 	// Aggergation logic is done here
 	@RequestMapping(value = "/pjt/aggregateAll", method = RequestMethod.GET)
 	public List<ProjectSummary> aggregateAll() {
@@ -231,7 +231,7 @@ public class EmployeeController {
 		return pjt.aggregateByDomain(minCost, maxCost, domain);
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	/*@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
 		LOGGER.info("Entered emp login service");
 		Users user = userepo.findByUserName(loginRequest.getUsername());
@@ -243,5 +243,5 @@ public class EmployeeController {
 			LOGGER.info("User is not found here");
 		}
 		return null;
-	}
+	}*/
 }
