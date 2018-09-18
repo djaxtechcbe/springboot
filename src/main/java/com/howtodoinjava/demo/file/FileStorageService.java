@@ -1,4 +1,4 @@
-package com.howtodoinjava.demo.file;
+/*package com.howtodoinjava.demo.file;
 
 import com.howtodoinjava.demo.exception.FileStorageException;
 import com.howtodoinjava.demo.exception.MyFileNotFoundException;
@@ -73,4 +73,4 @@ public class FileStorageService {
             throw new MyFileNotFoundException("File not found " + fileName, ex);
         }
     }
-}
+}*/
